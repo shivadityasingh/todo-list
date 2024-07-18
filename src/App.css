@@ -42,11 +42,13 @@ ul {
 li {
   background: #61dafb;
   margin: 10px 0;
-  padding: 10px;
+  padding: 12px;
   font-size: 1.5rem;
   border-radius: 5px;
   display: flex;
   align-items: center;
+  text-align: center;
+  color: black;
 }
 
 li input[type='checkbox'] {
@@ -61,6 +63,36 @@ li.completed {
 
 li:not(.completed):hover {
   background: #21a1f1;
+}
+
+.input{
+  background: lightblue;
+  margin: 10px 0;
+  padding: 12px;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.input::placeholder{
+  color: black;
+}
+
+.plus{
+  display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 30px;
+    background-color:cornflowerblue; 
+    color: black; /* White text color */
+    border-radius: 10%; /* Circular shape */
+    font-size: 30px; /* Large font size for the plus sign */
+    font-weight: bold;
+    border: 2px solid transparent;
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
 @media (max-width: 600px) {

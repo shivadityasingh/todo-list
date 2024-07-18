@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 
-function Input({addTodo}){
+function Input(props){
 
     const[newTodo, setNewTodo] = useState('');
 
-return (
+    return (
     <div>
-        <input type='text' value={newTodo} onChange={(e) => setNewTodo(e.target.value)} placeholder="Enter a new task"></input>
-        <button onClick={() => addTodo(newTodo, false)}></button>
+        <input className="input" type='text' value={newTodo} onChange={(e) => setNewTodo(e.target.value)} placeholder="Enter a new task"></input>
+        <button className="plus" onClick={() => props.addTodo(newTodo, false)}>+</button>
     </div>
-)
+    )
 }
 
 export default Input;

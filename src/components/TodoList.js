@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import TodoItem from './TodoItem';
+import Input from './input';
 
 function TodoList() {
-  const [todos, setTodos] = useState([
-    { id: 1, text: 'Learn React', completed: false },
-    { id: 2, text: 'Build a To-Do App', completed: false },
-  ]);
+  const [todos, setTodos] = useState([]);
+  const [idCounter, setIdCounter] = useState(0);
+
+  const addTodo = (text, completed) => {
+      setIdCounter(idCounter + 1)
+      setTodos([...todos, {id : idCounter, text : text, completed : completed}])
+  }
+  
 
   const toggleTodo = (id) => {
     setTodos(
@@ -17,6 +22,7 @@ function TodoList() {
 
   return (
     <div>
+      <Input addTodo={addTodo}/>
       <ul>
         {todos.map((todo) => (
           <TodoItem key={todo.id} todo={todo} toggleTodo={toggleTodo} />
